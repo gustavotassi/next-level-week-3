@@ -33,14 +33,15 @@ h1,
   justify-content: center;
 
   margin: auto;
-
-  transition: background 200ms;
+  
+  transition: 500ms;
 }
 
 /* Animações */
 
 .visit a:hover {
   background: #96feff;
+  transform: translateY(-3px);
 }
 
 #logo {
