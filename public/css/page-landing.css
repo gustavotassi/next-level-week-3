@@ -1,7 +1,6 @@
-
 #page-landing {
   background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%);
-  
+
   text-align: center;
   min-height: 100vh;
 
@@ -11,7 +10,7 @@
 #container {
   margin: auto;
 
-  width: 90%;
+  width: min(90%, 112rem); /* 1120px */
 }
 
 .location,
@@ -33,8 +32,9 @@ h1,
   justify-content: center;
 
   margin: auto;
-  
+
   transition: 500ms;
+  animation-delay: 250ms;
 }
 
 /* Animações */
@@ -60,6 +60,56 @@ main h1 {
   animation-delay: 200ms;
 }
 
-.visit a {
-  animation-delay: 250ms;
+/* desktop version */
+/* se o mínimo é 760px para cima */
+@media (min-width: 760px) {
+  #container {
+    padding: 5rem 2rem;
+    /* shorthand background: image repeat position / size */
+    background: url("../images/bg.svg") no-repeat 65% /
+      clamp(16rem, 38vw, 44rem);
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .location,
+  h1,
+  .visit p {
+    height: initial;
+    text-align: initial;
+  }
+
+  .location {
+    text-align: right;
+  }
+
+  main h1 {
+    font-size: clamp(3.4rem, 7vw, 7.4rem);
+    font-weight: bold;
+    line-height: 0.88;
+
+    margin: clamp(6%, 8vh, 10%) 0 4rem;
+
+    width: min(300px, 80%);
+  }
+
+  .visit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .visit p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: clamp(20rem, 20vw, 30rem);
+  }
+
+  .visit a {
+    margin: initial;
+  }
 }
